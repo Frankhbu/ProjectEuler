@@ -3,6 +3,29 @@ package me.hbu.frank.utils;
 public class NumberUtils {
 
 	/**
+	 * 判断某整形数是否为回文数
+	 * @param l
+	 * @return
+	 */
+	public static boolean isPalindromicNumber(int i){
+		return isPalindromicNumber((long)i);
+	}
+	/**
+	 * 判断某长整形数是否为回文数
+	 * @param l
+	 * @return
+	 */
+	public static boolean isPalindromicNumber(long l){
+		boolean result = true;
+		char[] array = (l+"").toCharArray();
+		for (int i = 0; i < array.length / 2; i++) {
+			if (array[i] != array[array.length - 1 - i]) {
+				result = false;
+			}
+		}		
+		return result;
+	}
+	/**
 	 * 判断某整数是否为质数
 	 * @param a
 	 * @return
@@ -110,10 +133,5 @@ public class NumberUtils {
 	}
 
 	public static void main(String[] args) {
-		for (int i = 0; i < 100; i++) {
-			if(isPrimeNumber(i)){
-				System.out.println(i);
-			}
-		}
 	}
 }
