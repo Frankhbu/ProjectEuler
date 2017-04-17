@@ -1,7 +1,34 @@
 package me.hbu.frank.utils;
 
-public class StringUtils {
+public class NumberUtils {
 
+	/**
+	 * 判断某整数是否为质数
+	 * @param a
+	 * @return
+	 */
+	public static boolean isPrimeNumber(int a){
+		return isPrimeNumber((long)a);
+	}
+	
+	/**
+	 * 判断某长整形数是否为质数
+	 * @param a
+	 */
+	public static boolean isPrimeNumber(long a) {
+		boolean result = true;
+		if (a < 2) {
+			return false;
+		}else {
+			for (int i = 2; i <= Math.sqrt(a) ; i++) {
+				if ( a % i == 0) {
+					result = false;
+					break;
+				}
+			}
+		}
+		return result;
+	}
 	/**
 	 * 计算两个数a和b的乘积
 	 * @param a
@@ -83,8 +110,10 @@ public class StringUtils {
 	}
 
 	public static void main(String[] args) {
-		String a = "1111111111";
-		String b = "1111111111";
-		System.out.println(mutiply(a, b));
+		for (int i = 0; i < 100; i++) {
+			if(isPrimeNumber(i)){
+				System.out.println(i);
+			}
+		}
 	}
 }
