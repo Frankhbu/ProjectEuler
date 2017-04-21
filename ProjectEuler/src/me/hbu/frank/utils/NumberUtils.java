@@ -132,6 +132,38 @@ public class NumberUtils {
 		return intArray;
 	}
 
+	/**
+	 * 获取m和n的最大公约数
+	 * @param m
+	 * @param n
+	 * @return
+	 */
+	public static long getGreatestCommonDivisor(long m,long n){
+		long bigger = (m >= n)? m : n ;
+		long smaller = (m > n)? n : m ;
+		long max = 1;
+		for (int i = 1; i <= smaller; i++) {
+			if (smaller % i == 0 && bigger % i == 0 && i > max) {
+				max = i;
+			}
+		}
+		return max;
+	}
+	
+	/**
+	 * 判断某数是否是全质数
+	 * @param l
+	 * @return
+	 */
+	public static boolean isCircularPrime(long l){
+		String str = l+"";
+		char[] digits = str.toCharArray();
+		
+		return false;
+	}
+	
 	public static void main(String[] args) {
+		
+		System.out.println(getGreatestCommonDivisor(4l, 5l));
 	}
 }

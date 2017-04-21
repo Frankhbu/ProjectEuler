@@ -1,0 +1,31 @@
+package me.hbu.frank.archives;
+
+import me.hbu.frank.utils.NumberUtils;
+
+/**
+
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, 
+we can see that the 6th prime is 13.
+
+What is the 10 001st prime number?
+ */
+public class Problem007 {
+
+
+	public static void main(String[] args) {
+		boolean flag = true;
+		int count = 0;
+		int current = 0;
+		while (flag) {
+			current ++;
+			if (NumberUtils.isPrimeNumber(current)) {
+				count ++;
+				if (count == 10001) {
+					break;
+				}
+			}
+		}
+		System.out.println(current);
+	}
+
+}
