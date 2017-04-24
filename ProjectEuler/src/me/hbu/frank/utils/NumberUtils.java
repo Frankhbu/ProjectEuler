@@ -150,18 +150,6 @@ public class NumberUtils {
 		return max;
 	}
 	
-	/**
-	 * 判断某数是否是全质数
-	 * @param l
-	 * @return
-	 */
-	public static boolean isCircularPrime(long l){
-		String str = l+"";
-		char[] digits = str.toCharArray();
-		
-		return false;
-	}
-	
 	public static void main(String[] args) {
 		
 		System.out.println(getGreatestCommonDivisor(4l, 5l));
