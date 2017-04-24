@@ -72,7 +72,7 @@ public class NumberUtils {
 		intArrayA = transposition(intArrayA);
 		intArrayB = transposition(intArrayB);
 		
-		int lengthC = lengthA + lengthB - 1;
+		int lengthC = lengthA + lengthB;
 		int[] intArrayC = new int[lengthC];
 		
 		for (int i = 0; i < intArrayB.length; i++) {
@@ -212,7 +212,7 @@ public class NumberUtils {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(add("9", "9"));
+		System.out.println(mutiply("4", "6"));
 	
 	}
 }
