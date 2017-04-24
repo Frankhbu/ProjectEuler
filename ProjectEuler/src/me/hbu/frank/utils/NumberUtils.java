@@ -1,5 +1,6 @@
 package me.hbu.frank.utils;
 
+
 public class NumberUtils {
 
 	/**
@@ -91,6 +92,65 @@ public class NumberUtils {
 	}
 
 	/**
+	 * 计算a和b两个数的和
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public static String add(String a,String b){
+		int lengthA = a.length();
+		int lengthB = b.length();
+		
+		char[] charArrayA = a.toCharArray();
+		char[] charArrayB = b.toCharArray();
+		
+		int[] intArrayA = getIntArray(charArrayA);
+		int[] intArrayB = getIntArray(charArrayB);
+		intArrayA = transposition(intArrayA);
+		intArrayB = transposition(intArrayB);
+		
+		int lengthC = (lengthA > lengthB) ? lengthA + 1:lengthB + 1;
+		int[] intArrayC = new int[lengthC];
+		
+		int longger = (lengthA >= lengthB) ? lengthA : lengthB;
+		int shorter = (lengthA >= lengthB) ? lengthB : lengthA;
+		
+		for (int i = 0; i < shorter; i++) {
+			int temp = intArrayA[i] + intArrayB[i] + intArrayC[i];
+			if (temp > 9) {
+				intArrayC[i] = temp % 10;
+				intArrayC[i+1] = temp / 10;
+			}else {
+				intArrayC[i] = temp;
+			}
+		}
+		if (longger > shorter) {
+			if (lengthA > lengthB) {
+				for (int i = shorter; i < longger; i++) {
+					int temp = intArrayA[i] + intArrayC[i];
+					if (temp > 9) {
+						intArrayC[i] = temp % 10;
+						intArrayC[i+1] = temp / 10;
+					}else{
+						intArrayC[i] = temp;
+					}
+				}
+			}else {
+				for (int i = shorter; i < longger; i++) {
+					int temp = intArrayA[i] + intArrayC[i];
+					if (temp > 9) {
+						intArrayC[i] = temp % 10;
+						intArrayC[i+1] = temp / 10;
+					}else{
+						intArrayC[i] = temp;
+					}
+				}
+			}
+		}
+		
+		return getTranspositionedString(intArrayC);
+	}
+	/**
 	 * 将数组转置，并返回转置后的字符串（去前导0）
 	 * @param array
 	 * @return
@@ -152,6 +212,7 @@ public class NumberUtils {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(getGreatestCommonDivisor(4l, 5l));
+		System.out.println(add("9", "9"));
+	
 	}
 }
