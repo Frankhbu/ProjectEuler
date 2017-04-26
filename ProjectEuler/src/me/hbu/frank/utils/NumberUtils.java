@@ -137,7 +137,7 @@ public class NumberUtils {
 				}
 			}else {
 				for (int i = shorter; i < longger; i++) {
-					int temp = intArrayA[i] + intArrayC[i];
+					int temp = intArrayB[i] + intArrayC[i];
 					if (temp > 9) {
 						intArrayC[i] = temp % 10;
 						intArrayC[i+1] = temp / 10;
@@ -212,7 +212,7 @@ public class NumberUtils {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(mutiply("4", "6"));
+		System.out.println(add("999", "11111"));
 	
 	}
 }
