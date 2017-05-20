@@ -1,5 +1,9 @@
 package me.hbu.frank.utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.transform.Templates;
 
 public class NumberUtils {
 
@@ -210,9 +214,54 @@ public class NumberUtils {
 		return max;
 	}
 	
+	/**
+	 * 计算数组array的全排列
+	 * @param array 待排列数组
+	 * @param index 开始index
+	 * @param result 最终结果
+	 */
+	public static void arrange(Integer[] array,int index, List<Integer[]> result){
+	
+		if (index == array.length - 1) {
+			Integer[] temp = new Integer[array.length];
+			for (int i = 0; i < array.length; i++) {
+				temp[i] = array[i];
+			}
+			result.add(temp);
+		}else {
+			for (int i = index; i < array.length; i++) {				
+				Integer t = array[i];
+				array[i] = array[index];
+				array[index] = t;
+				
+				arrange(array, index + 1,result);
+				
+				t = array[i];
+				array[i] = array[index];
+				array[index] = t;
+			}	
+		}
+	}
+	
+	/**
+	 * 对数组array从startIndex开始进行排序
+	 * @param array
+	 * @param startIndex
+	 */
+	
+	public static void sort(Integer[] array,int startIndex){
+		for (int i = 0; i < array.length - startIndex - 1 ; i++) {
+			for (int j = startIndex ; j < array.length - i - 1; j++) {
+				if (array[j] > array[j+1]) {					
+					Integer t = array[j];
+					array[j] = array[j+1];
+					array[j+1] = t;
+				}
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		
-		System.out.println(add("999", "11111"));
-	
 	}
 }
