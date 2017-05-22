@@ -1,9 +1,6 @@
 package me.hbu.frank.utils;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.transform.Templates;
 
 public class NumberUtils {
 
@@ -261,7 +258,25 @@ public class NumberUtils {
 		}
 	}
 	
+	/**
+	 * 计算a的b次幂
+	 * @param a 底数
+	 * @param b 指数
+	 * @return c 结果
+	 */
+	public static String power(String a,String b){
+		long long_b = Long.parseLong(b);
+		String result = "1";
+		if (long_b == 0) {
+			return "1";
+		}
+		for (int i = 1; i <= long_b; i++) {
+			result = mutiply(result, a);
+		}
+		return result;
+	}
+	
 	public static void main(String[] args) {
-		
+		System.out.println(power("2", "8"));
 	}
 }
