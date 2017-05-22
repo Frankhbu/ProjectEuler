@@ -31,5 +31,4 @@ public class Problem029 {
 		}
 		System.out.println(result.size());
 	}
-
 }
