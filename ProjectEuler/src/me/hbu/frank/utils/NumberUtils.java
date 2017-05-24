@@ -1,5 +1,6 @@
 package me.hbu.frank.utils;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class NumberUtils {
@@ -276,7 +277,16 @@ public class NumberUtils {
 		return result;
 	}
 	
+	public static BigInteger factorial(BigInteger n){
+		if (n.equals(BigInteger.ZERO) || n.equals(BigInteger.ONE)) {
+			return BigInteger.ONE;
+		}else{
+			BigInteger bigInteger_1 = new BigInteger("-1");
+			return n.multiply(factorial(n.add(bigInteger_1)));
+		}
+	}
 	public static void main(String[] args) {
-		System.out.println(power("2", "8"));
+		System.out.println(factorial(new BigInteger("4")));
+		
 	}
 }
