@@ -16,8 +16,8 @@ public class Problem002 {
 		int start1 = 1;
 		int start2 = 2;
 		//0:all
-		//1:odd
-		//2:even
+		//1:odd ÆæÊý
+		//2:even Å¼Êý
 		int valueType = 2;
 		int sum = getStartNumbersAndSumByValueTypeUnderLimit(start1,start2,valueType,limit);
 		System.out.println(sum);
